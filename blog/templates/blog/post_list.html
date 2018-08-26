@@ -1,0 +1,41 @@
+{% load static %}
+<html>
+    <head>
+    	<title>Raleigh's blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="icon" type="image/png" href="{{static}}/static/img/favicon.png">
+		<link rel="stylesheet" href="/static/css/blog.css">
+		<style type="text/css">
+		.page-header {
+    		background-color: #5db0ef;
+    		margin-top: 0;
+    		padding: 20px 20px 20px 40px;
+		}
+		.postimg {
+			margin-left: 10px;
+		}
+		</style>
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="/"><img src="/static/img/knotdone.png" height="48" width="40"> Raleigh's blog <img src="/static/img/knotdone.png" height="48" width="40"></a></h1>
+            {% if user.is_authenticated %}
+    			<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+			{% endif %}
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+					{% for post in posts %}
+	   				 <div>
+	       				 <h1><a href="{% url 'post_detail' pk=post.pk %}">{{post.title }}</a><img class="postimg" height="100" width=100"" src="{{post.imageURL}}"></h1>
+	       				 <p>published: {{ post.published_date }}</p>
+	       				 <p>{{ post.text | truncatewords_html:20}} <a href = "{% url 'post_detail' pk=post.pk %}">Read on ...</a></p>
+	    			</div>
+					{% endfor %}
+				</div>
+            </div>
+        </div>
+    </body>
+</html>
