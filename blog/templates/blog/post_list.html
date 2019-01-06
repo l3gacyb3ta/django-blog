@@ -1,15 +1,16 @@
 {% load static %}
 <html>
     <head>
-    	<title style = "font-family: 'Unlock', cursive;">Raleigh's blog</title>
       <link href="https://fonts.googleapis.com/css?family=Unlock" rel="stylesheet">
+    	<title style = "font-family: 'Unlock', cursive;">Raleigh's blog</title>
+
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
         <link rel="icon" type="image/png" href="{{static}}/static/img/favicon.png">
 		<link rel="stylesheet" href="/static/css/blog.css">
 		<style type="text/css">
 		.page-header {
-    		background-color: #5db0ef;
+    		background-color: #16D39D;
     		margin-top: 0;
     		padding: 20px 20px 20px 40px;
 		}
@@ -32,7 +33,7 @@
 	   				 <div>
 	       				 <h1><a href="{% url 'post_detail' pk=post.pk %}">{{post.title }}</a><img class="postimg" height="100" width=100"" src="{{post.imageURL}}"></h1>
 	       				 <p>published: {{ post.published_date }}</p>
-	       				 <p>{{ post.text | truncatewords_html:20}} <a href = "{% url 'post_detail' pk=post.pk %}">Read on ...</a></p>
+	       				 <p>{{ post.text | truncatewords_html:20}} <a href = "{% url 'post_detail' pk=post.pk %}"><br>Read on ...</a></p>
 	    			</div>
 					{% endfor %}
 				</div>
