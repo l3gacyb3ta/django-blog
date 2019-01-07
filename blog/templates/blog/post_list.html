@@ -21,10 +21,12 @@
     </head>
     <body>
         <div class="page-header">
+          
             <h1><a href="/"><img src="/static/img/knotdone.png" height="48" width="40"> Raleigh's blog <img src="/static/img/knotdone.png" height="48" width="40"></a></h1>
             {% if user.is_authenticated %}
     			<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
 			{% endif %}
+          <a href="https://translate.google.com/translate?hl=&sl=auto&tl=fr&u=https%3A%2F%2Frablog.pythonanywhere.com%2F">Fr</a>|<a href="https://rablog.pythonanywhere.com">En</a>
         </div>
         <div class="content container">
             <div class="row">
