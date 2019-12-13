@@ -38,7 +38,7 @@
 	   				 <div>
 	       				 <h1><a href="{% url 'post_detail' pk=post.pk %}">{{post.title }}</a><img class="postimg" height="100" width=100"" src="{{post.imageURL}}"></h1>
 	       				 <p>published: {{ post.published_date }}</p>
-	       				 <p>{{ post.text | truncatewords_html:20}} <a href = "{% url 'post_detail' pk=post.pk %}"><br>Read on ...</a></p>
+	       				 <p>{{ post.text | truncatewords_html:20}} <a href = "{% url 'post_detail' pk=post.pk %}"><br>Read more...</a></p>
 	    			</div>
 					{% endfor %}
 				</div>
