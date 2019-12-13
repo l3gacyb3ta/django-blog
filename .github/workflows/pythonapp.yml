@@ -20,4 +20,4 @@ jobs:
 
     - name: Test code
       run: |
-        pip install -y myblog
+        python mysite/__init__.py
